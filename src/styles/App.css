@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+body {
+  --primary-color1: #111f2b;
+  --primary-color2: #397ebb;
+  --font-heading1: pacifico;
+  --font-general: Arial, Helvetica, sans-serif;
+
+  font-family: var(--font-general);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.hero-container {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: url(../media/background.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.hero-container h1 {
+  position: absolute;
+  top: 0px;
+  font-family: var(--font-heading1);
+  font-weight: 100;
+  color: var(--primary-color1);
+  text-shadow: 5px 5px 10px var(--primary-color1);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 200px;
+  padding: 20px;
+  box-shadow: 0px 0px 20px black;
+  border-radius: 10px;
+}
+
+.main-container__instruction {
+  color: red;
+  font-size: 0.7rem;
+  height: 18px;
+}
+.main-container__file-name {
+  text-align: center;
+  height: 18px;
+}
+.audio-icon {
+  font-size: 150px;
+  color: var(--primary-color1);
+}
+.input__icon-container {
+  display: grid;
+  place-items: center;
+  border: 2px dashed var(--primary-color1);
+  padding: 15px 0px 15px 0px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+/* for grey button/icon */
+.grey-icon-button {
+  color: grey;
+}
+
+#audio-input__file {
+  display: none;
+}
+
+.audio-input__label {
+  display: grid;
+  place-items: center;
+  background: var(--primary-color2);
+  height: 25px;
+  width: 100px;
+  justify-self: center;
+  margin: 5px auto 0px auto;
+  border-radius: 5px;
+}
