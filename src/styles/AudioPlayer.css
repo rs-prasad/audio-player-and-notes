@@ -1,0 +1,14 @@
+.audio-player {
+  position: relative;
+  top: 60px;
+  width: max(70vw, 600px);
+  margin: auto;
+  height: 90vh;
+}
+
+.wave-form__notes-indicator {
+  border-bottom: 10px solid grey;
+}
+.wave-form__timeline {
+  border-bottom: 10px solid grey;
+}
