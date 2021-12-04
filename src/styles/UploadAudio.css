@@ -1,0 +1,79 @@
+.hero-container {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: url(../media/background.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 200px;
+  padding: 20px;
+  box-shadow: 0px 0px 20px black;
+  border-radius: 10px;
+  transform: translateY(-10px);
+}
+
+.main-container__instruction {
+  color: red;
+  font-size: 0.7rem;
+}
+.main-container__file-name {
+  text-align: center;
+  font-size: 0.7rem;
+}
+.audio-icon {
+  font-size: 150px;
+  color: var(--primary-color1);
+  transition: color linear 1s;
+}
+.input__icon-container {
+  display: grid;
+  place-items: center;
+  border: 2px dashed var(--primary-color1);
+  padding: 15px 0px 15px 0px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+/* for grey button/icon */
+.grey-icon-button {
+  color: grey;
+}
+
+#audio-input__file {
+  display: none;
+}
+
+.audio-input__btn {
+  display: grid;
+  place-items: center;
+  background: none;
+  border: none;
+  background: var(--primary-color2);
+  height: 25px;
+  width: 100px;
+  margin: 5px auto 0px auto;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.audio-input__btn:hover {
+  opacity: 0.8;
+}
+
+.audio-input .clear-btn {
+  visibility: none;
+  height: 0px;
+  background-color: rgb(206, 61, 61);
+  transform: scale(0);
+  transition: transform ease-in 0.25s;
+}
+.audio-input .show-btn {
+  visibility: visible;
+  height: 25px;
+  transform: scale(1);
+}

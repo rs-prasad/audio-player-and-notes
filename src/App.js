@@ -6,6 +6,9 @@ import ContextAPI from "./ContextAPI";
 function App() {
   return (
     <div className="App">
+      <nav className="navbar">
+        <h1 className="navbar__title">Audio Player</h1>
+      </nav>
       <ContextAPI>
         <Router>
           <Switch>

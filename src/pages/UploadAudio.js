@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { FaRegFileAudio } from "react-icons/fa";
 import { IconContext } from "react-icons";
+import "../styles/UploadAudio.css";
 
 const UploadAudio = () => {
   //useState
@@ -43,7 +44,6 @@ const UploadAudio = () => {
 
   return (
     <div className="hero-container">
-      <h1>Audio Player</h1>
       <div className="main-container">
         <div className="input-container">
           <div className="input__icon-container">
