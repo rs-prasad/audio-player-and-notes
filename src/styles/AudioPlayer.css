@@ -12,3 +12,21 @@
 .wave-form__timeline {
   border-bottom: 10px solid grey;
 }
+
+.audio-player__controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.controls__main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.controls__btn {
+  margin: 0px max(3%, 10px);
+}
+.main__btn {
+  margin: 0px 5px;
+}

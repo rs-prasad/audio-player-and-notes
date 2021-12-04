@@ -1,60 +1,45 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router";
 import WaveSurfer from "wavesurfer";
 import { useGlobalContext } from "../../ContextAPI";
 import "../../styles/AudioPlayer.css";
+import Controls from "./Controls";
+import WaveForm from "./WaveForm";
 
 const AudioPlayer = () => {
-  //useContext
-  const { fileObject } = useGlobalContext();
+  //Hooks
+  const [wavesurfer, setWavesurfer] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const history = useHistory();
-  //useRef
   const waveformRef = useRef(); //refers container tag
-  //const wavesurfer = useRef(); //stores instance of wavesurfer
-  let wavesurfer = null;
-  //debug
+  const { fileObject } = useGlobalContext();
 
   //useEffect
-  useEffect(() => {
-    console.log(typeof fileObject.message);
+  useEffect(async () => {
     if (fileObject.message === "empty") {
       history.push("/");
     }
-    wavesurfer = WaveSurfer.create({
+    let wavesurf = await WaveSurfer.create({
       container: waveformRef.current,
       waveColor: "#808080",
       progressColor: "#1d4b74",
       barWidth: 2,
       height: 100,
       responsive: true,
-      //hideScrollbar: true,
-      //autoCenter: true,
+      hideScrollbar: true,
       //barRadius: "10px",
     });
-    wavesurfer.load(fileObject.dataURL);
-    return () => wavesurfer.destroy();
+    await wavesurf.load(fileObject.dataURL);
+    setWavesurfer(wavesurf);
+    setIsLoading(false);
+    return () => wavesurf.destroy();
   }, [fileObject]);
-  //functions
-  console.log();
 
   return (
     <div className="audio-player">
       <h4>{fileObject.name}</h4>
-      <div className="waveform">
-        <div className="wave-form__notes-indicator"></div>
-        <div className="waveform__display" ref={waveformRef}></div>
-        <div className="wave-form__timeline"></div>
-      </div>
-      <div className="controls">
-        <div>Toggle</div>
-        <div>backward</div>
-
-        <div onClick={() => wavesurfer.playPause()}>play</div>
-        <div>forward</div>
-
-        <div>replay</div>
-        <div>volume</div>
-      </div>
+      <WaveForm waveformRef={waveformRef} />
+      {!isLoading && <Controls wavesurfer={wavesurfer} />}
     </div>
   );
 };
