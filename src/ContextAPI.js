@@ -12,7 +12,6 @@ const ContextAPI = ({ children }) => {
   );
 };
 export const useGlobalContext = () => {
-  console.log("runed");
   return useContext(AppContext);
 };
 export default ContextAPI;
