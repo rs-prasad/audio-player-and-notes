@@ -1,6 +1,25 @@
 .error-container {
-  display: grid;
-  place-content: center;
+  display: flex;
   width: 100vw;
   height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-container h2 {
+  margin-bottom: 25px;
+}
+
+.error-container button {
+  height: 30px;
+  background-color: var(--primary-color2);
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  transition: transform ease-in 0.5s;
+}
+.error-container button:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
