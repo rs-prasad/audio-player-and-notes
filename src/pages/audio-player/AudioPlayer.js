@@ -12,7 +12,7 @@ const AudioPlayer = () => {
   const [wavesurfer, setWavesurfer] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const history = useHistory();
-  const waveformRef = useRef(); //refers container tag
+  const waveformRef = useRef(); //refers waveform container tag
   const { fileObject } = useGlobalContext();
 
   //useEffect
@@ -28,7 +28,6 @@ const AudioPlayer = () => {
       height: 100,
       responsive: true,
       hideScrollbar: true,
-      //barRadius: "10px",
     });
     await wavesurf.load(fileObject.dataURL);
     setWavesurfer(wavesurf);
@@ -38,8 +37,12 @@ const AudioPlayer = () => {
 
   return (
     <div className="audio-player">
-      <h4>{fileObject.name}</h4>
-      <WaveForm waveformRef={waveformRef} />
+      <p>{fileObject.name}</p>
+      <WaveForm
+        waveformRef={waveformRef}
+        wavesurfer={wavesurfer}
+        isLoading={isLoading}
+      />
       {!isLoading && <Controls wavesurfer={wavesurfer} />}
       {!isLoading && <Notes wavesurfer={wavesurfer} />}
     </div>

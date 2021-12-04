@@ -25,7 +25,6 @@ const UploadAudio = () => {
     setSelected(true);
   };
   const handleChange = () => {
-    console.log("onchange ran");
     const file = inputFile.current.files[0];
     const reader = new FileReader();
     reader.addEventListener("load", () => {

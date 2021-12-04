@@ -10,18 +10,37 @@
   bottom: 0px;
 }
 
+.audio-player p {
+  font-size: 14px;
+}
+
 /* WaveFrom component */
 .wave-form__notes-indicator {
-  border-bottom: 10px solid grey;
+  height: 10px;
+}
+.wave-form__notes-indicator div {
+  position: absolute;
+  display: inline-block;
+  background-color: blue;
+  height: 4px;
+  width: 4px;
+  border-radius: 2px;
 }
 .wave-form__timeline {
-  border-bottom: 10px solid grey;
+  border-top: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: grey;
+  font-size: 0.7rem;
+  margin-bottom: 5px;
 }
 /* Controls component */
 .audio-player__controls {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 10px;
 }
 .controls__main {
   display: flex;
@@ -34,6 +53,49 @@
 }
 .main__btn {
   margin: 0px 5px;
+  font-size: 1.3rem;
+  color: var(--primary-color1);
+  cursor: pointer;
+}
+.volume-icon {
+  display: inline-block;
+}
+.controls__volume-btn {
+  font-size: 1.3rem;
+  color: var(--primary-color1);
+  cursor: pointer;
+}
+.controls__volume-btn input {
+  width: 120px;
+  transform: translateY(-2px);
+}
+.controls__toggle-btn {
+  background-color: var(--primary-color2);
+  font-size: 0.8rem;
+  width: 85px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  padding: 2px 5px 2px 5px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.toggle-btn__status {
+  text-align: center;
+  font-weight: bold;
+}
+.toggle-btn__circle {
+  position: absolute;
+  font-size: 1.7rem;
+  color: var(--primary-color1);
+  transform: translate(55px, -6px);
+  transition: all linear 0.5s;
+}
+.toggle-btn--translate {
+  transform: translate(-10px, -6px);
+}
+.toggle-btn__status--change {
+  text-indent: 15px;
 }
 
 /* Notes Component */
@@ -51,7 +113,7 @@
   border-radius: 10px 10px 0px 0px;
   padding: 15px 20px;
   overflow: auto;
-  max-height: 62vh;
+  max-height: 58vh;
 }
 .notes__current-note {
   background-color: grey;

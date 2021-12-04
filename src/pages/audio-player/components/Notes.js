@@ -15,6 +15,7 @@ const Notes = ({ wavesurfer }) => {
     setCurrentTimestapm(timeInMin);
   };
   const handleAddBtnClick = () => {
+    if (currentNote.length === 0) return;
     const newObj = {
       timestamp: currentTimestamp,
       note: currentNote,
@@ -32,7 +33,11 @@ const Notes = ({ wavesurfer }) => {
         {notesArray.map((item) => {
           const { timestamp, note } = item;
           return (
-            <div className="saved-notes__note" data-timestamp={timestamp}>
+            <div
+              className="saved-notes__note"
+              key={timestamp}
+              data-timestamp={timestamp}
+            >
               {note}
             </div>
           );
