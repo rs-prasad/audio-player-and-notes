@@ -1,7 +1,9 @@
 import "./styles/App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import UploadAudio from "./pages/UploadAudio";
+import AudioPlayer from "./pages/audio-player/AudioPlayer";
 import ContextAPI from "./ContextAPI";
+import Error from "./pages/Error";
 
 function App() {
   return (
@@ -14,6 +16,12 @@ function App() {
           <Switch>
             <Route path="/" exact>
               <UploadAudio />
+            </Route>
+            <Route path="/audio-player" exact>
+              <AudioPlayer />
+            </Route>
+            <Route path="*">
+              <Error />
             </Route>
           </Switch>
         </Router>

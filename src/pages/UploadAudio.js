@@ -36,6 +36,7 @@ const UploadAudio = () => {
   const handleClear = () => {
     setFileObject({});
     setSelected(false);
+    inputFile.current.value = "";
   };
   const handleSubmit = (e) => {
     e.preventDefault();
