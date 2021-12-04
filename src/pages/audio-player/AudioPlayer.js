@@ -3,8 +3,9 @@ import { useHistory } from "react-router";
 import WaveSurfer from "wavesurfer";
 import { useGlobalContext } from "../../ContextAPI";
 import "../../styles/AudioPlayer.css";
-import Controls from "./Controls";
-import WaveForm from "./WaveForm";
+import Controls from "./components/Controls";
+import WaveForm from "./components/WaveForm";
+import Notes from "./components/Notes";
 
 const AudioPlayer = () => {
   //Hooks
@@ -40,6 +41,7 @@ const AudioPlayer = () => {
       <h4>{fileObject.name}</h4>
       <WaveForm waveformRef={waveformRef} />
       {!isLoading && <Controls wavesurfer={wavesurfer} />}
+      {!isLoading && <Notes wavesurfer={wavesurfer} />}
     </div>
   );
 };

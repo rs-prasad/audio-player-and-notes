@@ -1,18 +1,23 @@
+/* audio player */
 .audio-player {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  top: 60px;
+  top: 8vh;
   width: max(70vw, 600px);
   margin: auto;
-  height: 90vh;
+  height: 92vh;
+  bottom: 0px;
 }
 
+/* WaveFrom component */
 .wave-form__notes-indicator {
   border-bottom: 10px solid grey;
 }
 .wave-form__timeline {
   border-bottom: 10px solid grey;
 }
-
+/* Controls component */
 .audio-player__controls {
   display: flex;
   flex-direction: row;
@@ -29,4 +34,73 @@
 }
 .main__btn {
   margin: 0px 5px;
+}
+
+/* Notes Component */
+.audio-player__notes {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 80%;
+  align-self: center;
+}
+
+.notes__saved-notes {
+  background-color: whitesmoke;
+  flex: 1;
+  border-radius: 10px 10px 0px 0px;
+  padding: 15px 20px;
+  overflow: auto;
+  max-height: 62vh;
+}
+.notes__current-note {
+  background-color: grey;
+  height: 10%;
+  border-radius: 0px 0px 10px 10px;
+}
+.saved-notes__note {
+  margin-left: 50px;
+  text-indent: -16px;
+  margin-bottom: 10px;
+}
+
+.saved-notes__note::before {
+  display: inline-block;
+  position: relative;
+  content: attr(data-timestamp);
+  transform: translateX(-20px);
+}
+
+.notes__current-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notes__current-note textarea {
+  width: 90%;
+  height: 80%;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 2px 5px 2px 5px;
+}
+
+.notes__current-note button {
+  height: 80%;
+  margin-left: 5px;
+  background-color: var(--primary-color2);
+  border: none;
+  border-radius: 10px;
+}
+.notes__current-note button:hover {
+  background-color: var(--hover-color1);
+  cursor: pointer;
+}
+/*scrollbar properties*/
+.notes__saved-notes::-webkit-scrollbar {
+  width: 0.75em;
+}
+
+.notes__saved-notes::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 5px;
 }
