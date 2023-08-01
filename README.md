@@ -1,3 +1,4 @@
+# Audio visualizer and transcription
 :link: https://audio-player-with-notes.netlify.app/ \
 React project to upload audio file, play them and take notes.\
 packages used - wavesurfer.js, react-icons etc.
